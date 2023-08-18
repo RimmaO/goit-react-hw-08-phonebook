@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { useSelector } from 'react-redux';

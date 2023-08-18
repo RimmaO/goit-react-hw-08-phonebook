@@ -1,12 +1,5 @@
-// import { Toaster } from 'react-hot-toast';
-
-// import Section from './Section/Section';
-// import ContactForm from './ContactForm/ContactForm';
-// import ContactList from './ContactList/ContactList';
-// import Filter from './Filter/Filter';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-// import { fetchContacts } from 'redux/operation';
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
