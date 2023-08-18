@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import { Button } from 'components/ContactForm/ContactForm.styled';
 import { Item, Span } from './ContactListItem.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContacts } from 'redux/operation';
-import { selectError, selectIsLoading } from 'redux/selectors';
+import { deleteContacts } from 'redux/contacts/operations';
+import { selectError, selectIsLoading } from 'redux/contacts/selectors';
 import Loader from 'components/Loader/Loader';
 
 const ContactListItem = ({ id, name, number }) => {

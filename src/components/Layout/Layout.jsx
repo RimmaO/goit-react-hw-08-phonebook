@@ -5,25 +5,27 @@ import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { useSelector } from 'react-redux';
 import UserMenu from 'components/UserMenu/UserMenu';
 import AuthNav from 'components/AuthNav/AuthNav';
+import { Header, NavigationLink } from './Layout.styled';
 
 const Layout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
     <>
-      <header>
+      <Header>
         <nav>
-          <NavLink to="/">Home</NavLink>
-          {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
+          <NavigationLink to="/">Home</NavigationLink>
+          {isLoggedIn && (
+            <NavigationLink to="/contacts">Contacts</NavigationLink>
+          )}
         </nav>
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </header>
+      </Header>
       <main>
         <Suspense fallback={<div>Loading page...</div>}>
           <Outlet />
         </Suspense>
       </main>
-      <footer>Copyright &copy; 2023 GoIT. Created by Rimma Ohanesian.</footer>
 
       <Toaster />
     </>

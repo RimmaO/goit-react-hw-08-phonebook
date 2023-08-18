@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import ContactListItem from 'components/ContactListItem/ContactListItem';
-import { selectContacts, selectFilter } from 'redux/selectors';
+import { selectContacts, selectFilter } from 'redux/contacts/selectors';
 import { useSelector } from 'react-redux';
 
 const ContactList = () => {

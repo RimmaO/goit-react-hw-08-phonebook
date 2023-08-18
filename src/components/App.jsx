@@ -26,7 +26,7 @@ export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(refreshUser);
+    dispatch(refreshUser());
   }, [dispatch]);
 
   return (
@@ -38,7 +38,7 @@ export default function App() {
             path="/register"
             element={
               <RestrictedRoute
-                component={RegisterPage}
+                component={<RegisterPage />}
                 redirectTo="/contacts"
               />
             }
@@ -47,31 +47,19 @@ export default function App() {
             path="/login"
             element={
               <RestrictedRoute
-                component={LoginPage}
-                redirectTo="/contacts" />
+                component={<LoginPage />}
+                redirectTo="/contacts"
+              />
             }
           />
           <Route
             path="/contacts"
             element={
-              <PrivateRoute component={ContactsPage} redirectTo="/login" />
+              <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
             }
           />
         </Route>
       </Routes>
     )
-    // <>
-    //   <Toaster />
-
-    //   <Section title="Phonebook">
-    //     <ContactForm />
-    //   </Section>
-
-    //   <Section title="Contacts">
-    //     <Filter />
-
-    //     <ContactList />
-    //   </Section>
-    // </>
   );
 }

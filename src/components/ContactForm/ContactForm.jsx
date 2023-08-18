@@ -1,8 +1,8 @@
 import { toast } from 'react-hot-toast';
 import { Button, Input, Text, Wrap } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
-import { addContacts } from 'redux/operation';
+import { selectContacts } from 'redux/contacts/selectors';
+import { addContacts } from 'redux/contacts/operations';
 
 const ContactForm = () => {
   const dispatch = useDispatch();

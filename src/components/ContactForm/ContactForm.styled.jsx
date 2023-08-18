@@ -9,7 +9,6 @@ export const Button = styled.button`
   height: 25px;
   padding: 4px 8px;
 
-  font-family: inherit;
   font-style: normal;
   font-size: 12px;
   line-height: 1;
@@ -22,7 +21,7 @@ export const Button = styled.button`
   background-color: white;
 
   &:hover {
-    background-color: green;
+    background-color: orangered;
   }
 `;
 
