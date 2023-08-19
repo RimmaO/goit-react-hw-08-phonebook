@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import UserMenu from 'components/UserMenu/UserMenu';
 import AuthNav from 'components/AuthNav/AuthNav';
 import { Header, NavigationLink } from './Layout.styled';
+import Loader from 'components/Loader/Loader';
 
 const Layout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -22,7 +23,14 @@ const Layout = () => {
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </Header>
       <main>
-        <Suspense fallback={<div>Loading page...</div>}>
+        <Suspense
+          fallback={
+            <div>
+              Loading page...
+              <Loader />
+            </div>
+          }
+        >
           <Outlet />
         </Suspense>
       </main>

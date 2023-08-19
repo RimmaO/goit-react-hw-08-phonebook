@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import ContactListItem from 'components/ContactListItem/ContactListItem';
 import { selectContacts, selectFilter } from 'redux/contacts/selectors';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchContacts } from 'redux/contacts/operations';
 
 const ContactList = () => {
   const contacts = useSelector(selectContacts);
@@ -9,7 +11,11 @@ const ContactList = () => {
   const getFilterContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
-  // console.log(getFilterContacts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <ul>

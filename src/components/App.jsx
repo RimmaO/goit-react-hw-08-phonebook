@@ -12,6 +12,7 @@ const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
 const LoginPage = lazy(() => import('../pages/Login'));
 const ContactsPage = lazy(() => import('../pages/Contacts'));
+const NotFoundPage = lazy(() => import('../pages/NotFound'));
 
 export default function App() {
   const isRefreshing = useSelector(selectIsRefreshing);
@@ -51,6 +52,7 @@ export default function App() {
               <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
             }
           />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     )

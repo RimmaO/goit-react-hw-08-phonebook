@@ -1,3 +1,4 @@
+import { Button, Input } from 'components/ContactForm/ContactForm.styled';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 
@@ -32,18 +33,24 @@ const Register = () => {
   return (
     <form style={styles.form} onSubmit={handleSubmit} autoComplete="off">
       <label style={styles.label}>
-        Username
-        <input type="text" name="name" />
+        Name
+        <Input
+          type="text"
+          name="name"
+          pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Name may contain only letters, apostrophe, dash and spaces.For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          required
+        />
       </label>
       <label style={styles.label}>
         Email
-        <input type="email" name="email" />
+        <Input type="email" name="email" required />
       </label>
       <label style={styles.label}>
         Password
-        <input type="password" name="password" />
+        <Input type="password" name="password" required />
       </label>
-      <button type="submit">Register</button>
+      <Button type="submit">Register</Button>
     </form>
   );
 };

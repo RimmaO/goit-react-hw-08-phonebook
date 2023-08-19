@@ -1,3 +1,4 @@
+import { Button, Input } from 'components/ContactForm/ContactForm.styled';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 
@@ -32,13 +33,13 @@ const Login = () => {
     <form style={styles.form} onSubmit={handleSubmit} autoComplete="off">
       <label style={styles.label}>
         Email
-        <input type="email" name="email" />
+        <Input type="email" name="email" required />
       </label>
       <label style={styles.label}>
         Password
-        <input type="password" name="password" />
+        <Input type="password" name="password" required />
       </label>
-      <button type="submit">Log In</button>
+      <Button type="submit">Log In</Button>
     </form>
   );
 };
